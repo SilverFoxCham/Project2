@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="header">
+        <p class="eyebrow">Two player</p>
+        <h1>Tic Tac Toe</h1>
+        <p class="subtitle">Take turns. First to three in a row wins.</p>
+      </header>
+
+      <section class="scoreboard" aria-label="Scoreboard">
+        <article class="score-card" data-player="X">
+          <span class="mark">X</span>
+          <span class="label">Player X</span>
+          <strong id="score-x">0</strong>
+        </article>
+        <article class="score-card draws">
+          <span class="mark">—</span>
+          <span class="label">Draws</span>
+          <strong id="score-draw">0</strong>
+        </article>
+        <article class="score-card" data-player="O">
+          <span class="mark">O</span>
+          <span class="label">Player O</span>
+          <strong id="score-o">0</strong>
+        </article>
+      </section>
+
+      <p id="status" class="status" role="status" aria-live="polite">
+        Player X starts
+      </p>
+
+      <div
+        id="board"
+        class="board"
+        role="grid"
+        aria-label="Tic tac toe board"
+      ></div>
+
+      <div class="actions">
+        <button id="new-round" type="button">New round</button>
+        <button id="reset-scores" type="button" class="ghost">Reset scores</button>
+      </div>
+
+      <p class="back-wrap">
+        <a class="back-link" href="index.html">Back to home</a>
+      </p>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
