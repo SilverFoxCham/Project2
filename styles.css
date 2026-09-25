@@ -69,9 +69,22 @@ h1 {
 }
 
 .score-card .mark {
-  display: block;
+  display: grid;
+  place-items: center;
+  min-height: 1.5rem;
   font-weight: 700;
   font-size: 1.2rem;
+}
+
+.glyph {
+  width: 62%;
+  height: 62%;
+  display: block;
+}
+
+.score-card .glyph {
+  width: 1.35rem;
+  height: 1.35rem;
 }
 
 .score-card[data-player="X"] .mark,
@@ -119,11 +132,11 @@ h1 {
 
 .cell {
   aspect-ratio: 1;
+  display: grid;
+  place-items: center;
   border: 1px solid rgba(148, 163, 184, 0.28);
   border-radius: 16px;
   background: #1e293b;
-  font-size: clamp(2.2rem, 8vw, 3.4rem);
-  font-weight: 700;
   cursor: pointer;
   color: inherit;
   transition: transform 0.12s ease, background 0.12s ease;
@@ -199,7 +212,6 @@ button.ghost {
 
 .landing-preview .cell {
   pointer-events: none;
-  font-size: 1.6rem;
 }
 
 .play-button {

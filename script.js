@@ -24,18 +24,32 @@ const state = {
   scores: { X: 0, O: 0, draw: 0 },
 };
 
+/**
+ * Creates the Tic Tac Toe board UI by generating 9 cell buttons
+ * and attaching them to the board container. Each cell is clickable
+ * and mapped to its index, with appropriate ARIA attributes for accessibility.
+ */
 function createBoard() {
+  // Clear any existing board content
   boardEl.innerHTML = "";
-  state.cells.forEach((_, index) => {
+
+  // Create each cell
+  for (let index = 0; index < state.cells.length; index++) {
     const cell = document.createElement("button");
     cell.className = "cell";
     cell.type = "button";
     cell.dataset.index = String(index);
+
+    // Accessibility: identify grid cell, provide cell number
     cell.setAttribute("role", "gridcell");
     cell.setAttribute("aria-label", `Cell ${index + 1}`);
+
+    // On cell click, attempt to play this cell
     cell.addEventListener("click", () => play(index));
+
+    // Add cell to the board
     boardEl.appendChild(cell);
-  });
+  }
 }
 
 function play(index) {
@@ -77,14 +91,24 @@ function findWinner() {
   return null;
 }
 
+const MARK_SHAPES = {
+  X: `<svg class="glyph" viewBox="0 0 64 64" aria-hidden="true"><path d="M18 18 L46 46 M46 18 L18 46" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round"/></svg>`,
+  O: `<svg class="glyph" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="16" fill="none" stroke="currentColor" stroke-width="8"/></svg>`,
+};
+
 function renderBoard() {
   [...boardEl.children].forEach((cell, index) => {
     const mark = state.cells[index];
-    cell.textContent = mark;
+    cell.innerHTML = mark ? MARK_SHAPES[mark] : "";
     cell.classList.toggle("x", mark === "X");
     cell.classList.toggle("o", mark === "O");
     cell.classList.remove("win");
     cell.disabled = Boolean(mark) || state.locked;
+    const placed = mark === "X" ? "cross" : mark === "O" ? "circle" : "";
+    cell.setAttribute(
+      "aria-label",
+      placed ? `Cell ${index + 1}, ${placed}` : `Cell ${index + 1}`
+    );
   });
 }
 
