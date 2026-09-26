@@ -197,6 +197,13 @@ button.ghost {
   box-shadow: var(--shadow);
 }
 
+.logo {
+  display: block;
+  width: 72px;
+  height: auto;
+  margin: 0 auto 20px;
+}
+
 .landing-card .subtitle {
   margin: 12px auto 0;
   max-width: 34ch;
