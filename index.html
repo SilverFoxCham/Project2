@@ -13,10 +13,18 @@
         <img class="logo" src="logo.svg" alt="Tic Tac Toe" />
         <p class="eyebrow">Classic two-player</p>
         <h1>Tic Tac Toe</h1>
-        <p class="subtitle">
-          Challenge a friend. Take turns placing a cross and a circle — first
-          to three in a row wins.
-        </p>
+        <section class="how-to" aria-labelledby="how-to-heading">
+          <h2 id="how-to-heading">How to play</h2>
+          <ol>
+            <li>Share one device. Player X places the first mark.</li>
+            <li>Take turns on empty cells: X is a cross, O is a circle.</li>
+            <li>Get three of your marks in a row, column, or diagonal to win the round.</li>
+            <li>
+              Scoring: each win adds 1 point. A full board with no winner counts
+              as a draw. Scores stay until you choose Reset scores.
+            </li>
+          </ol>
+        </section>
         <div class="landing-preview" aria-hidden="true">
           <span class="cell x"><svg class="glyph" viewBox="0 0 64 64"><path d="M18 18 L46 46 M46 18 L18 46" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round"/></svg></span>
           <span class="cell o"><svg class="glyph" viewBox="0 0 64 64"><circle cx="32" cy="32" r="16" fill="none" stroke="currentColor" stroke-width="8"/></svg></span>
