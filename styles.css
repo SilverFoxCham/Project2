@@ -188,7 +188,8 @@ button.ghost {
 }
 
 .landing-card {
-  width: min(480px, 100%);
+
+  width: min(520px, 100%);
   text-align: center;
   padding: 40px 28px 36px;
   background: var(--panel);
@@ -207,6 +208,34 @@ button.ghost {
 .landing-card .subtitle {
   margin: 12px auto 0;
   max-width: 34ch;
+}
+
+.how-to {
+  margin: 20px auto 0;
+  max-width: 38ch;
+  text-align: left;
+}
+
+.how-to h2 {
+  margin: 0 0 12px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-align: center;
+}
+
+.how-to ol {
+  margin: 0;
+  padding-left: 1.25rem;
+  color: var(--text);
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.how-to li + li {
+  margin-top: 10px;
 }
 
 .landing-preview {
